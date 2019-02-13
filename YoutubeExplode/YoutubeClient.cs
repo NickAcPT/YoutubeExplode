@@ -172,5 +172,17 @@ namespace YoutubeExplode
 
             return PlaylistAjaxParser.Initialize(raw);
         }
+
+        private async Task<SearchSuggestionParser> GetSearchSuggestionParserForSearchAsync(string query)
+        {
+            query = query.UrlEncode();
+
+            // Don't ensure success here so that empty pages could be parsed
+
+            var url = $"https://suggestqueries.google.com/complete/search?client=youtube&q={query}&hl=en&jsonp=JP&ds=yt";
+            var raw = await _httpClient.GetStringAsync(url, false).ConfigureAwait(false);
+
+            return SearchSuggestionParser.Initialize(raw.Substring(3, raw.Length - 4));
+        }
     }
 }
