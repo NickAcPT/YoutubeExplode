@@ -1,3 +1,16 @@
+### v4.6.7 (16-Mar-2019)
+
+- Fixed some more inconsistencies with how links in video descriptions are rendered.
+
+### v4.6.6 (24-Feb-2019)
+
+- Fixed an issue where `JsonReaderException` was thrown when downloading videos that were blocked on copyright grounds.
+
+### v4.6.5 (16-Feb-2019)
+
+- Fixed an issue where parser methods for channel ID and username failed if the URL contained query parameters.
+- Fixed some inconsistencies with how links in video descriptions are rendered.
+
 ### v4.6.4 (16-Jan-2019)
 
 - Pinned AngleSharp dependency to version 0.9.11 because newer versions contain breaking changes that are currently incompatible with YoutubeExplode.
